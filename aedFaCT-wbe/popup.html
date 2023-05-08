@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            min-width: 370px;
+            max-width: 800px;
+
+            min-height: 78px;
+            max-height: 600px;
+
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        /* Include the padding and border in an element's total width and height */
+        * {
+          box-sizing: border-box;
+        }
+
+
+        .loader {
+            margin: auto;
+            border: 1px solid #f3f3f3;
+            border-radius: 50%;
+            border-right: 3px solid green;
+            border-left: 3px solid green;
+            border-top: 3px solid red;
+            border-bottom: 3px solid red;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .confirmBtn {
+            padding: 10px;
+            width: 100%;
+            background: #20295b;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 0;
+        }
+
+        .loaderContainer {
+            display: block;
+            text-align: center;
+        }    
+
+        .selection {
+            display: none;
+        }
+
+        p {text-align: center;}
+
+        /* Remove margins and padding from the list */
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+
+        /* Style the list items */
+        ul li {
+          cursor: pointer;
+          position: relative;
+          padding: 8px 8px 8px 40px;
+          list-style-type: none;
+          background: #f3f4fb;
+          font-size: 13px;
+          transition: 0.2s;
+        
+          /* make the list items unselectable */
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        ul li:before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 12px;
+          height: 16px;
+          width: 16px;
+          background-color: #fff;
+          display: inline-block;
+          border: 1px solid #aaa;
+          padding-bottom: 1px;
+          box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+        }
+
+        /* Set all odd list items to a different color (zebra-stripes) */
+        ul li:nth-child(odd) {
+          background: #f9f9f9;
+        }
+
+        /* Darker background-color on hover */
+        ul li:hover {
+          background: #d8dcf1;
+        }
+
+        /* When clicked on, add a background color and strike out text */
+        ul li.checked {
+          background: #3f51b5;
+          color: #fff;
+        }
+
+        /* Add a "checked" mark when clicked on */
+        ul li.checked::before {
+          content: '\2713';
+          color: #3f51b5;
+          text-align: center;
+        }
+
+        /* Style the close button */
+        .close {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 8px 16px 8px 16px;
+        }
+
+        .close:hover {
+          background-color: #20295b;
+          color: white;
+        }
+
+        /* Style the header */
+        .header1 {
+          background-color: #20295b;
+          padding: 10px 20px;
+          color: white;
+          text-align: center;
+        }
+
+        .header2 {
+          background-color: #6271c8  ;
+          padding: 20px 30px;
+          color: white;
+          text-align: center;
+        }
+
+        /* Clear floats after the header */
+        .header2:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Style the input */
+        input {
+          margin: 0;
+          border: none;
+          border-radius: 0;
+          width: 75%;
+          padding: 6px;
+          float: left;
+          font-size: 14px;
+        }
+
+        /* Style the "Add" button */
+        .addBtn {
+          padding: 6px;
+          width: 25%;
+          background: #d8dcf1;
+          color: #555;
+          float: left;
+          text-align: center;
+          font-size: 14px;
+          cursor: pointer;
+          transition: 0.3s;
+          border-radius: 0;
+          height: 28px;
+        }
+
+        .addBtn:hover {
+          background-color: #b1b8e3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loaderContainer" id="loaderContainer">
+        <p id="loaderText">Extracting keywords...</p>
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <div class="selection" id="selection1">
+        <div id="header1" class="header1">
+            <p style="margin:5px">Please select the relevant keywords from the list or add yours. The selected keywords will be used together (with an <b>AND</b> operator) for information retrieval. For the best results, a selection of <b>3-4 keywords</b> is recommended. </p>
+        </div>
+
+        <ul id="myUL"></ul>
+
+        <div id="header2" class="header2">
+          <input type="text" id="myInput" placeholder="Keyword...">
+          <span class="addBtn" id="addBtn">Add</span>
+        </div>
+        <input type="button" class="confirmBtn" value="Confirm" id="confirm">
+    </div>
+    
+    <script src="thirdParty/jquery-3.5.1.min.js"></script>
+    <script src="thirdParty/css.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
