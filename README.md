@@ -25,7 +25,7 @@ stanfordcorenlp==3.9.1.1
 ## Citation
 
 Please cite the following paper if you benefit from this repository in your research:
-
+<!---
 ````
 @inproceedings{altuncu2023,
   title={aedFaCT: Scientific Fact-Checking Made Easier via Semi-Automatic Discovery of Relevant Expert Opinions},
@@ -43,3 +43,4 @@ Please cite the following paper if you benefit from this repository in your rese
   publisher={Association for the Advancement of Artificial Intelligence},
 }
 ````
+--->
