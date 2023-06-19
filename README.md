@@ -25,10 +25,10 @@ stanfordcorenlp==3.9.1.1
 ## Citation
 
 Please cite the following paper if you benefit from this repository in your research:
-<!---
+
 ````
 @inproceedings{altuncu2023,
-  title={aedFaCT: Scientific Fact-Checking Made Easier via Semi-Automatic Discovery of Relevant Expert Opinions},
+  title={{aedFaCT}: Scientific Fact-Checking Made Easier via Semi-Automatic Discovery of Relevant Expert Opinions},
   authors={Altuncu, Enes and 
            Nurse, Jason~R.C. and 
            Bagriacik, Meryem and 
@@ -38,9 +38,9 @@ Please cite the following paper if you benefit from this repository in your rese
            Li, Shujun},
   year={2023},
   numpages={10},
-  doi={},
-  booktitle={Proceedings of the MEDIATE 2023 Workshop},
+  doi={10.36190/2023.27},
+  booktitle={Workshop Proceedings of the 17th International AAAI Conference on Web and Social Media},
   publisher={Association for the Advancement of Artificial Intelligence},
 }
 ````
---->
+
